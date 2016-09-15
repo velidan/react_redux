@@ -2,10 +2,13 @@ import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
 import 'react-hot-loader/patch';
+import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader';
+
 import App from './containers/App'
+import configureStore from './store/configureStore'
 
-
+const store = configureStore();
 renderWithHotReload(App);
 
 
@@ -18,8 +21,10 @@ if (module.hot) {
 
 function renderWithHotReload(RootElement) {
   render(
-    <AppContainer>
-        <RootElement  />
+	<AppContainer>
+		<Provider store={store}>
+			<RootElement  />
+		</Provider>
     </AppContainer>,
     document.getElementById('root')
   );
