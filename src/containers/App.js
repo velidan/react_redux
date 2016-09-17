@@ -13,7 +13,7 @@ class App extends Component {
 
 		return <div>
 			<User name={user.name} />
-			<Page photos={page.photos} year={page.year} />
+			<Page photos={page.photos} year={page.year} setYear={setYear} />
 		</div>
 	}
 }

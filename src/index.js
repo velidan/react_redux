@@ -4,6 +4,7 @@ import { render } from 'react-dom'
 import 'react-hot-loader/patch';
 import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader';
+import './styles/app.css'
 
 import App from './containers/App'
 import configureStore from './store/configureStore'
